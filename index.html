@@ -3,24 +3,189 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fruit Slot Machine</title>
+    <title>Slot Machine</title>
+    <link rel="stylesheet" href="fireworks.css">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="slot-machine">
-        <div class="score">Score: <span id="score">0</span></div>
-        <div class="reels-container">
-            <div class="reels">
-                <div class="reel" data-index="0"><div class="reel-indicator">NEXT</div></div>
-                <div class="reel" data-index="1"></div>
-                <div class="reel" data-index="2"></div>
-                <div class="reel" data-index="3"></div>
-                <div class="reel" data-index="4"></div>
-            </div>
-        </div>
-        <button id="spin-button">SPIN</button>
+    <div class="pyro">
+        <div class="before"></div>
+        <div class="after"></div>
     </div>
+    <div class="game-container">
+        <aside class="sidebar">
+            <h2>Результаты</h2>
+            <div class="result-message">Нажмите SPIN чтобы начать игру!</div>
+            <div class="result-fruits"></div>
+            <div class="win-title"></div>
+            <div class="win-hint"></div>
+            <div class="game-hint">Используйте пробел для SPIN/STOP</div>
+            
+            <div class="combinations-table">
+                <h3>Комбинации</h3>
+                <table>
+                    <tr>
+                        <th>Комбинация</th>
+                        <th>Очки</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="fruit-row">
+                                <span>👑 👑 👑</span>
+                            </div>
+                        </td>
+                        <td>200</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="fruit-row">
+                                <span>A A A</span>
+                            </div>
+                        </td>
+                        <td>150</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="fruit-row">
+                                <span>K K K</span>
+                            </div>
+                        </td>
+                        <td>100</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="fruit-row">
+                                <span>Q Q Q</span>
+                            </div>
+                        </td>
+                        <td>75</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="fruit-row">
+                                <span>J J J</span>
+                            </div>
+                        </td>
+                        <td>50</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="fruit-row">
+                                <span>7 7 7</span>
+                            </div>
+                        </td>
+                        <td>40</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="fruit-row">
+                                <span>🍒 🍒 🍒</span>
+                            </div>
+                        </td>
+                        <td>30</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="fruit-row">
+                                <span>🍇 🍇 🍇</span>
+                            </div>
+                        </td>
+                        <td>25</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="fruit-row">
+                                <span>🍓 🍓 🍓</span>
+                            </div>
+                        </td>
+                        <td>20</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="fruit-row">
+                                <span>🍋 🍋 🍋</span>
+                            </div>
+                        </td>
+                        <td>15</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="fruit-row">
+                                <span>♥ ♥ ♥</span>
+                            </div>
+                        </td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="fruit-row">
+                                <span>♦ ♦ ♦</span>
+                            </div>
+                        </td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="fruit-row">
+                                <span>♠ ♠ ♠</span>
+                            </div>
+                        </td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="fruit-row">
+                                <span>♣ ♣ ♣</span>
+                            </div>
+                        </td>
+                        <td>5</td>
+                    </tr>
+                </table>
+                <div class="combinations-note">* Работает с любыми фруктами</div>
+            </div>
+        </aside>
+        
+        <main class="slot-machine-container">
+            <div class="slot-machine">
+                <div class="score">Score: <span id="score">0</span></div>
+                <div class="reels-container">
+                    <div class="reels">
+                        <div class="reel" data-index="0">
+                            <div class="reel-indicator">STOP</div>
+                            <div class="reel-strip"></div>
+                        </div>
+                        <div class="reel" data-index="1">
+                            <div class="reel-indicator">STOP</div>
+                            <div class="reel-strip"></div>
+                        </div>
+                        <div class="reel" data-index="2">
+                            <div class="reel-indicator">STOP</div>
+                            <div class="reel-strip"></div>
+                        </div>
+                        <div class="reel" data-index="3">
+                            <div class="reel-indicator">STOP</div>
+                            <div class="reel-strip"></div>
+                        </div>
+                        <div class="reel" data-index="4">
+                            <div class="reel-indicator">STOP</div>
+                            <div class="reel-strip"></div>
+                        </div>
+                    </div>
+                </div>
+                <button id="spin-button">SPIN</button>
+            </div>
+        </main>
+    </div>
+    <div id="win-modal" class="modal">
+        <div class="modal-content">
+            <h2>Победа!</h2>
+            <p id="modal-message"></p>
+            <div class="modal-fruits"></div>
+            <p class="modal-hint">Нажмите чтобы начать новую игру</p>
+        </div>
+    </div>
+    <script src="fireworks.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
